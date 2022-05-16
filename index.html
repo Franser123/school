@@ -8,18 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="calculator()">
+    <div>
         <label for="firstNumber">Podaj Pierwszą liczbę</label>
-        <input type="text" id="firstNumber" name="firstNumber"><br>
+        <input type="number" id="firstNumber" name="firstNumber"><br>
         <label for="secondNumber">Podaj Drugą liczbę</label>
-        <input type="text" id="secondNumber" name="secondNumber"><br>
+        <input type="number" id="secondNumber" name="secondNumber"><br>
         <label for="selector">Wybierz co chcesz zrobić</label>
-        <select name="selector" id="selector">
-            <option value="+">+</option>
-            <option value="-">-</option>
+        <select name="selector" id="selector" onchange="checkWhatSelect()">
+            <option value="+">dodawanie</option>
+            <option value="-">odejmowanie</option>
+            <option value="*">mnożenie</option>
+            <option value="/">dzielenie</option>
+            <option value="!" id="silnia">silnia</option>
         </select>
-        <button>Wyślij</button>
-    </form>
+        <button onclick="countCalculator()">Wyślij</button>
+    </div>
+
+    <h1 class="outcome">Wynik:</h1>
     
     <script src="script.js"></script>
 </body>
